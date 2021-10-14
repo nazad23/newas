@@ -6,7 +6,7 @@
  * 5. return average
 */
 
-const getNumAvg = function(...input) {
+const getNumAvg = function() {
     let args = [...arguments];
     let newArr = [];
 
