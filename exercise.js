@@ -6,7 +6,7 @@
  * 5. return average
 */
 
-const getNumAvg = function(...input) {
+const getNumAvg = function() {
     let args = [...arguments];
     let newArr = [];
 
@@ -32,6 +32,4 @@ const isStringNumeric = str => [...str].every(num => '0123456789'.includes(num))
 
 module.exports = {
     getNumAvg,
-    sum,
-    isStringNumeric
 }
