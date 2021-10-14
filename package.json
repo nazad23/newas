@@ -1,0 +1,11 @@
+{
+  "name": "newas",
+  "version": "1.0.0",
+  "main": "exercise.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "devDependencies": {
+    "jest": "^27.2.5"
+  }
+}

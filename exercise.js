@@ -6,8 +6,7 @@
  * 5. return average
 */
 
-
-const getNumAvg = function(...arguments) {
+const getNumAvg = function(...input) {
     let args = [...arguments];
     let newArr = [];
 
@@ -15,7 +14,7 @@ const getNumAvg = function(...arguments) {
         if(args.length < 2) throw `Must enter two or more values!`; 
         for(let i=0; i<args.length; i++) {
             if(typeof(args[i]) === 'number') newArr.push(args[i]);
-            else if(typeof(args[i]) === 'string') {
+            else if(typeof(args[i]) === 'string' && [...args[i]].length > 0) {
                 if(isStringNumeric(args[i])) newArr.push(parseInt(args[i]));
                 else throw `${args[i]} is not a valid number!`;
             }
@@ -29,8 +28,10 @@ const getNumAvg = function(...arguments) {
 
 const sum = (arr) => arr.reduce((acc, currval) => acc + currval, 0);
 
-const isStringNumeric = str => {
-    if([...str].length < 1) return false;
-    return [...str].every(num => '0123456789'.includes(num));
+const isStringNumeric = str => [...str].every(num => '0123456789'.includes(num));
+
+module.exports = {
+    getNumAvg,
+    sum,
+    isStringNumeric
 }
-   
