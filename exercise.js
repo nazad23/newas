@@ -18,7 +18,7 @@ const getNumAvg = function() {
                 if(isStringNumeric(args[i])) newArr.push(parseInt(args[i]));
                 else throw `${args[i]} is not a valid number!`;
             }
-            else return `${args[i]} is not a valid value`;
+            else return `${args[i]} is an invalid value!`;
         }
         return sum(newArr) / args.length;
     }catch(e) {
@@ -26,9 +26,17 @@ const getNumAvg = function() {
     }
 }
 
-const sum = (arr) => arr.reduce((acc, currval) => acc + currval, 0);
+const sum = function(array) {
+    return array.reduce((acc, currval) => {
+        return acc + currval
+    }, 0)
+}
 
-const isStringNumeric = str => [...str].every(num => '0123456789'.includes(num));
+const isStringNumeric = function(string) {
+    return [...string].every(num => {
+        return '0123456789'.includes(num)
+    })
+}
 
 module.exports = {
     getNumAvg,
